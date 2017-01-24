@@ -1,6 +1,6 @@
 # Автодонат для Minecraft [v2.6]
-![Скриншот главной страницы](AD-PROMO-1.png)
-![Скриншот админ-панели](AD-PROMO-2.png)
+[![Скриншот главной страницы](AD-PROMO-1.png)](AD-PROMO-1.png)
+[![Скриншот админ-панели](AD-PROMO-2.png)](AD-PROMO-2.png)
 
 ### Ссылки:
 1. [О скрипте автодоната](#about)
@@ -14,6 +14,7 @@
     * [WalletOne](#walletone)
     * [RoboKassa](#robokassa)
     * [WebMoney](#webmoney)
+5. [Купить](#wherebuy)
 
 ## <a name="about"></a> О скрипте
 Актуальная информация о скрипте размещена [здесь](http://whileteam.ru/?page=products&do=view&id=1).
@@ -104,7 +105,7 @@
     В админ-панеле скрипта введите кошелёк и секретный ключ, так-же поставьте галочку "Включить WebMoney?"!
 
 ## <a name="wherebuy"></a> Где купить это добро?)
-###»[ТУТ](http://whileteam.ru/?page=products&do=view&id=1)
+### »[ТУТ](http://whileteam.ru/?page=products&do=view&id=1)
 
 ## <a name="changelog"></a> Лог изенений:
 Coming soon....
