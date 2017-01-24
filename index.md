@@ -1,37 +1,113 @@
-## Welcome to GitHub Pages
+# Автодонат для Minecraft [v2.6]
+![Скриншот главной страницы](AD-PROMO-1.png)
+![Скриншот админ-панели](AD-PROMO-2.png)
 
-You can use the [editor on GitHub](https://github.com/KobaltMR/mc-auto-donate-wiki/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+### Ссылки:
+1. [О скрипте автодоната](#about)
+2. [Установка скрипта](#install)
+3. [Файл cron.php](#cron)
+4. [Подключение платёжной системы](#merchants)
+    * [InterKassa](#interkassa)
+    * [UnitPay](#unitpay)
+    * [FreeKassa](#freekassa)
+    * [MyKassa](#mykassa)
+    * [WalletOne](#walletone)
+    * [RoboKassa](#robokassa)
+    * [WebMoney](#webmoney)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## <a name="about"></a> О скрипте
+Актуальная информация о скрипте размещена [здесь](http://whileteam.ru/?page=products&do=view&id=1).
 
-### Markdown
+## <a name="install"></a> Установка скрипта
+Установка скрипта происходит в автоматическом режиме. Вам не недо саому импортировать SQL файл.
+Что-же нужно для установки скрипта:
+1. Версия PHP >= 5.6
+2. Выдать права 777 на файл config.php
+3. Перейти по адресу: http://ваш_сайт/install.php
+4. Ввести первоначально требуемые данные и нажать установить
+5. После установки <u>необъходимо</u> удалить файл install.php и install.sql из директории скрипта.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Всё, скрипт установен!
+Админ-панель размещена по адресу: /cpanel.php.
 
-```markdown
-Syntax highlighted code block
+(Стандартные данные для входа: admin:admin)
 
-# Header 1
-## Header 2
-### Header 3
+## <a name="cron"></a> О файле cron.php
+Начиная с версии 2.0 файл cron.php стал очень важным и желательно что-бы его каждый подключил к CRON.
 
-- Bulleted
-- List
+Его работа заключается в том что-бы удалять старые не оплаченные платежи в БД (тем самым отчищая БД) и выполняет выдачу товаров которые не удалось выдать при покупке.
 
-1. Numbered
-2. List
+Рекомендуеться поставить его выполняться каждые 5 минут.
 
-**Bold** and _Italic_ and `Code` text
+## <a name="merchants"></a> Платёжные системы
+На данный момент в версии 2.6 доступны следующие платёжные системы:
+* [InterKassa](#interkassa)
+* [UnitPay](#unitpay)
+* [FreeKassa](#freekassa)
+* [MyKassa](#mykassa)
+* [WalletOne](#walletone)
+* [RoboKassa](#robokassa)
+* [WebMoney](#webmoney)
 
-[Link](url) and ![Image](src)
-```
+### <a name="interkassa"></a> Подключение InterKassa
+    URL возврата в случае успеха: http://ваш_сайт.ру/?pstatus=success [POST]
+    URL возврата в случае неудачи: http://ваш_сайт.ру/?pstatus=fail [POST]
+    URL оповещения: http://ваш_сайт.ру/payments/interkassa.php [POST]
+    Алгоритм подписи: MD5
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+    В админ-панеле скрипта введите ID и секретные слова магазина, так-же поставьте галочку "Включить InterKassa?"! Для совершения тестовых платежей, включите их в админ-панеле.
+    
+### <a name="unitpay"></a> Подключение UnitPay
+    URL возврата в случае успеха: http://ваш_сайт.ру/?pstatus=success [POST]
+    URL возврата в случае неудачи: http://ваш_сайт.ру/?pstatus=fail [POST]
+    URL оповещения: http://ваш_сайт.ру/payments/unitpay.php [POST]
+    
+    В админ-панеле скрипта введите ID и секретные слова магазина, так-же поставьте галочку "Включить Unitpay?"!
+    
+### <a name="freekassa"></a> Подключение FreeKassa
+    URL возврата в случае успеха: http://ваш_сайт.ру/?pstatus=success [POST]
+    URL возврата в случае неудачи: http://ваш_сайт.ру/?pstatus=fail [POST]
+    URL оповещения: http://ваш_сайт.ру/payments/freekassa.php [POST]
+    
+    В админ-панеле скрипта введите ID и секретные слова магазина, так-же поставьте галочку "Включить FreeKassa?"!
 
-### Jekyll Themes
+### <a name="mykassa"></a> Подключение MyKassa
+    URL возврата в случае успеха: http://ваш_сайт.ру/?pstatus=success [POST]
+    URL возврата в случае неудачи: http://ваш_сайт.ру/?pstatus=fail [POST]
+    URL оповещения: http://ваш_сайт.ру/payments/mykassa.php [POST]
+    
+    В админ-панеле скрипта введите ID и секретные слова магазина, так-же поставьте галочку "Включить MyKassa?"!
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KobaltMR/mc-auto-donate-wiki/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### <a name="walletone"></a> Подключение WalletOne
+    URL возврата в случае успеха: http://ваш_сайт.ру/?pstatus=success [POST]
+    URL возврата в случае неудачи: http://ваш_сайт.ру/?pstatus=fail [POST]
+    URL скрипта: http://ваш_сайт.ру/payments/walletone.php [POST]
+    Метод формирования ЭЦП - MD5
+    
+    В админ-панеле скрипта введите ID и ключ магазина, так-же поставьте галочку "Включить WalletOne?"!
 
-### Support or Contact
+### <a name="robokassa"></a> Подключение RoboKassa
+    URL возврата в случае успеха: http://ваш_сайт.ру/?pstatus=success [POST]
+    URL возврата в случае неудачи: http://ваш_сайт.ру/?pstatus=fail [POST]
+    URL оповещения: http://ваш_сайт.ру/payments/robokassa.php [POST]
+    
+    В админ-панеле скрипта введите ID и секретные слова магазина, так-же поставьте галочку "Включить RoboKassa?"!
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### <a name="webmoney"></a> Подключение WebMoney Merchant
+    Success URL: http://ваш_сайт.ру/?pstatus=success [LINK]
+    Fail URL: http://ваш_сайт.ру/?pstatus=fail [LINK]
+    Result URL: http://ваш_сайт.ру/payments/webmoney.php
+    
+    Метод формирования контрольной подписи: SHA256!
+    
+    Заполните SecretKey (не путать с Secret Key X20!), можно ввести тюда что хотите, я обычно захожу на сайт генератора паролей и генерирую секретный ключ там.
+    В админ-панеле скрипта введите кошелёк и секретный ключ, так-же поставьте галочку "Включить WebMoney?"!
+
+## <a name="wherebuy"></a> Где купить это добро?)
+###»[ТУТ](http://whileteam.ru/?page=products&do=view&id=1)
+
+## <a name="changelog"></a> Лог изенений:
+Coming soon....
+
+
+&copy; WhileTeam
