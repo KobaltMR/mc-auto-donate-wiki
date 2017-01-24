@@ -42,6 +42,7 @@
 
 ## <a name="merchants"></a> Платёжные системы
 На данный момент в версии 2.6 доступны следующие платёжные системы:
+
 * [InterKassa](#interkassa)
 * [UnitPay](#unitpay)
 * [FreeKassa](#freekassa)
@@ -105,7 +106,7 @@
     В админ-панеле скрипта введите кошелёк и секретный ключ, так-же поставьте галочку "Включить WebMoney?"!
 
 ## <a name="wherebuy"></a> Где купить это добро?)
-### »[ТУТ](http://whileteam.ru/?page=products&do=view&id=1)
+### [»ТУТ](http://whileteam.ru/?page=products&do=view&id=1)
 
 ## <a name="changelog"></a> Лог изенений:
 Coming soon....
